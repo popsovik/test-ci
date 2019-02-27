@@ -23,7 +23,7 @@ jobs:
             - v1-dependencies-
 
       - run: npm install
-      - run: npm install -g serverless
+      - run: sudo npm install -g serverless
       - run: sls deploy --stage CI-test --region us-east-1
 
       - save_cache:
