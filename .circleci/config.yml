@@ -24,6 +24,7 @@ jobs:
 
       - run: npm install
       - run: npm install serverless
+      - run: sls deploy --stage CI-test --region us-east-1
 
       - save_cache:
           paths:
