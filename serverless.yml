@@ -13,7 +13,7 @@ functions:
     handler: handler.createUser
     environment:
       PASSWORD_ITERATIONS: 4096
-      PASSWORD_DERIVED_KEY_LENGTH: 256
+      PASSWORD_DERED_KEY_LENGTH: 256
 
   resetPassword:
     handler: handler.resetPassword
