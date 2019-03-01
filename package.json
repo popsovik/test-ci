@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "description": "This example demonstrates how to use environment variables for AWS Lambdas.",
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "aws-code-deploy": "^1.0.10"
+  }
 }

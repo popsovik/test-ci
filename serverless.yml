@@ -17,3 +17,6 @@ functions:
 
   resetPassword:
     handler: handler.resetPassword
+package:
+  exclude: 
+   - .circleci/**
