@@ -23,6 +23,7 @@ jobs:
             - v1-dependencies-
 
       - run: npm install
+      - run: sudo apt-get install python-dev
       - run: sudo npm install aws-code-deploy -g
       - run: sudo npm install -g serverless
 #      - run: sls deploy --stage CI-test --region us-east-1
