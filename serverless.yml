@@ -1,22 +1,15 @@
-service: functionCI
-
-frameworkVersion: ">=1.2.0 <2.0.0"
+service: test-deploy
 
 provider:
   name: aws
   runtime: nodejs8.10
-  environment:
-    EMAIL_SERVICE_API_KEY: KEYEXAMPLE1234
 
 functions:
-  createUser:
-    handler: handler.createUser
-    environment:
-      PASSWORD_ITERATIONS: 4096
-      PASSWORD_DERED_KEY_LENGTH: 256
+  hello:
+    handler: handler.hello
+    events:
+      - http: get hello
 
-  resetPassword:
-    handler: handler.resetPassword
 package:
   exclude: 
    - .circleci/**

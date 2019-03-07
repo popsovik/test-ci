@@ -1,0 +1,35 @@
+{
+    "CreateUserLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/functionCI/test-deploy/1551884316438-2019-03-06T14:58:36.438Z/functionCI.zip"
+        },
+        "FunctionName": "functionCI-test-deploy-createUser",
+        "Handler": "handler.createUser",
+        "MemorySize": 1024,
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs8.10",
+        "Timeout": 6,
+        "Environment": {
+          "Variables": {
+            "EMAIL_SERVICE_API_KEY": "KEYEXAMPLE1234",
+            "PASSWORD_ITERATIONS": 4096,
+            "PASSWORD_DERED_KEY_LENGTH": 256
+          }
+        }
+      },
+      "DependsOn": [
+        "CreateUserLogGroup",
+        "IamRoleLambdaExecution"
+      ]
+    }
+}
