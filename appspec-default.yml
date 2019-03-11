@@ -3,7 +3,7 @@ Resources:
   - myLambdaFunction:
       Type: AWS::Lambda::Function
       Properties:
-        Name: "test-deploy-first-function-hello"
+        Name: "deploy-testing-first-function-hello"
         Alias: "testAlias"
         CurrentVersion: "##CURRENTVERSION##"
         TargetVersion: "##TARGETVERSION##"

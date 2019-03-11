@@ -1,4 +1,4 @@
-service: test-deploy
+service: deploy-testing
 
 provider:
   name: aws
