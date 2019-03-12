@@ -3,7 +3,7 @@ Resources:
   - myLambdaFunction:
       Type: AWS::Lambda::Function
       Properties:
-        Name: "deploy-testing-first-function-hello"
-        Alias: "testAlias"
-        CurrentVersion: "'2'"
-        TargetVersion: "'3'"
+        Name: "deploy-testing-CD-demo-hello"
+        Alias: "demo"
+        CurrentVersion: "1"
+        TargetVersion: "2"

@@ -5,6 +5,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "aws-code-deploy": "^1.0.10"
+    "serverless-pseudo-parameters": "^2.4.0",
+    "serverless-step-functions": "^1.13.0"
   }
 }
