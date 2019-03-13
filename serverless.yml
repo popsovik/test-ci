@@ -1,7 +1,7 @@
 service: deploy-testing
 
 plugins: 
-  - serverless-step-functions
+  # - serverless-step-functions
   - serverless-pseudo-parameters
 provider:
   name: aws
@@ -21,18 +21,18 @@ package:
   exclude: 
    - .circleci/**
    
-stepFunctions:
-  stateMachines:
-    TestAliasMachine:
-      name: ${self:service}StateMachine${self:provider.stage}
-      events:
-        - http:
-            path: hello
-            method: GET
-      definition:
-        StartAt: hello
-        States:
-          hello:
-            Type: Task
-            Resource: ${self:custom.lambdaArnPrefix}hello:blabla
-            End: True
+# stepFunctions:
+  # stateMachines:
+    # TestAliasMachine:
+      # name: ${self:service}StateMachine${self:provider.stage}
+      # events:
+        # - http:
+            # path: hello
+            # method: GET
+      # definition:
+        # StartAt: hello
+        # States:
+          # hello:
+            # Type: Task
+            # Resource: ${self:custom.lambdaArnPrefix}hello:blabla
+            # End: True
