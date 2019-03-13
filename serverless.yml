@@ -1,8 +1,8 @@
 service: deploy-testing
 
 plugins: 
-  # - serverless-step-functions
-  # - serverless-pseudo-parameters
+  - serverless-step-functions
+  - serverless-pseudo-parameters
 provider:
   name: aws
   runtime: nodejs8.10
@@ -14,25 +14,25 @@ functions:
     events:
       - http: get hello
 
-# custom:
-  # lambdaArnPrefix: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${self:provider.stage}-
+custom:
+  lambdaArnPrefix: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${self:provider.stage}-
 
 package:
   exclude: 
    - .circleci/**
    
-# stepFunctions:
-  # stateMachines:
-    # TestAliasMachine:
-      # name: ${self:service}StateMachine${self:provider.stage}
-      # events:
-        # - http:
-            # path: hello
-            # method: GET
-      # definition:
-        # StartAt: hello
-        # States:
-          # hello:
-            # Type: Task
-            # Resource: ${self:custom.lambdaArnPrefix}hello
-            # End: True
+stepFunctions:
+  stateMachines:
+    TestAliasMachine:
+      name: ${self:service}StateMachine${self:provider.stage}
+      events:
+        - http:
+            path: hello
+            method: GET
+      definition:
+        StartAt: hello
+        States:
+          hello:
+            Type: Task
+            Resource: ${self:custom.lambdaArnPrefix}hello:blabla
+            End: True
