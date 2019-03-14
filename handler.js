@@ -1,7 +1,7 @@
 module.exports.hello = (event, context, callback) => {
   const response = {
     statusCode: 200,
-    body: 'EXAMPLE new branch2!!!! - Version 31!'
+    body: 'EXAMPLE new branch2!!!! - Version 32!'
   };
 
   callback(null, response);
