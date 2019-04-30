@@ -11,8 +11,8 @@ provider:
 functions:
   hello:
     handler: handler.hello
-    events:
-      - http: get hello
+    # events:
+      # - http: get hello
 
 custom:
   lambdaArnPrefix: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${self:provider.stage}-
