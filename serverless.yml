@@ -2,9 +2,9 @@ service: new-service-${ssm:/inspo/databases/aurora/DatabaseName}
 #deploy-testing2
 
 plugins: 
-  - serverless-step-functions
+
+  # - serverless-step-functions
   - serverless-pseudo-parameters
-  - serverless-plugin-canary-deployments  
 provider:
   name: aws
   runtime: nodejs8.10
@@ -36,14 +36,9 @@ provider:
 functions:
   hello:
     handler: handler.hello
-    events:
-      - http: get hello
-      # # - schedule:
-          # # rate: cron(20 * * * ? *)
-          # # enabled: ${self:custom.scheduleEnabled.${self:provider.stage}, 'true'}      
-    deploymentSettings:
-      type: Linear10PercentEvery1Minute
-      alias: Live
+
+    # events:
+      # - http: get hello
 
 custom:
   lambdaArnPrefix: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${self:provider.stage}-
@@ -65,7 +60,8 @@ package:
         # States:
           # hello:
             # Type: Task
-            # Resource: ${self:custom.lambdaArnPrefix}hello:Live
+
+            # Resource: ${self:custom.lambdaArnPrefix}hello:blabla
             # End: True
 # resources:
   # Resources:
