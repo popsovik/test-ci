@@ -19,8 +19,8 @@ provider:
     # ACCOUNTS_DB_PASSWORD: ${cf:${self:custom.infrastructureStackName}.DocsMasterPassword}
     # ACCOUNTS_DB_NAME: inspo-${self:provider.stage}
 #    APP_SERVICE_GATEWAY: ${${ssm:/inspo/beanstalk/endpoint_url} ,opt:api-gateway, 'http://ma-backend-services-dev.3bnnmpqsj6.us-east-1.elasticbeanstalk.com'}
-    APP_SERVICE_GATEWAY: ${opt:api-gateway, ssm:/inspo/beanstalk/endpoint_url}
-  apiGateway:
+    APP_SERVICE_GATEWAY: ${opt:api-gateway, 'ssm:/inspo/dev/api/ma-backend-services/app_service_gateway'}
+  # apiGateway:
     # restApiId: !Ref MyApiGW
     # restApiRootResourceId:
       # Fn::GetAtt:
