@@ -6,6 +6,7 @@
   "license": "MIT",
   "devDependencies": {
     "serverless-pseudo-parameters": "^2.4.0",
+    "serverless-plugin-canary-deployments": "^0.4.6",
     "serverless-step-functions": "^1.13.0"
   }
 }
